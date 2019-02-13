@@ -25,9 +25,11 @@ describe 'form page' do
 
   it 'ensures that the new form submits content and renders form content' do
     visit new_student_path
-
+    
     fill_in 'first_name', with: "Margaery"
+  
     fill_in 'last_name', with: "Tyrell"
+    
 
     click_on "Submit Student"
 
@@ -38,6 +40,7 @@ end
 describe 'Show page' do
   before do
     @student = Student.create!(first_name: "Daenerys", last_name: "Targaryen")
+    
   end
 
   it 'renders properly' do
